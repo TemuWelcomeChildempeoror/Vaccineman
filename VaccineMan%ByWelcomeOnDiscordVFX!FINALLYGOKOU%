@@ -1,0 +1,265 @@
+-- Services
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+
+-- Local Player
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Color tweening function
+local function tweenColor(imageLabel, startColor, endColor, duration)
+    local tweenInfo = TweenInfo.new(duration, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1, true)
+    local tween = TweenService:Create(imageLabel, tweenInfo, {ImageColor3 = endColor})
+    tween:Play()
+end
+
+-- GUI and color adjustment function
+local function updateBarColor()
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+    if not screenGui then return end
+
+    local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+    if not magicHealthFrame then return end
+
+    local healthFrame = magicHealthFrame:FindFirstChild("Health")
+    if not healthFrame then return end
+
+    local barFrame = healthFrame:FindFirstChild("Bar")
+    if not barFrame then return end
+
+    -- Remove the outline frame if it exists
+    local existingOutline = barFrame:FindFirstChild("OutlineFrame")
+    if existingOutline then
+        existingOutline:Destroy()
+    end
+
+    -- Create the bar inside the frame
+    local bar = barFrame:FindFirstChild("Bar")
+    if bar and bar:IsA("ImageLabel") then
+        -- Set initial color to white
+        bar.ImageColor3 = Color3.fromRGB(6, 57, 225)  -- Blue
+        -- Smooth transition from blue to blue
+        tweenColor(bar, Color3.fromRGB(6, 57, 225), Color3.fromRGB(0, 0, 255), 2)
+    end
+end
+
+-- Player setup
+local function onCharacterAdded()
+    updateBarColor()
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+if player.Character then
+    onCharacterAdded()
+end
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "UIContainer"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local creditText = Instance.new("TextLabel")
+creditText.Size = UDim2.new(1, 0, 0, 20) -- size
+creditText.Position = UDim2.new(0, 0, 0, 0) -- Top
+creditText.BackgroundTransparency = 1 -- bg
+creditText.Text = "VACCINE MANBY WELCOME ON DISCORD"
+creditText.TextColor3 = Color3.new(1, 1, 1) --clr
+creditText.Font = Enum.Font.SourceSans
+creditText.TextScaled = true -- scale
+creditText.TextTransparency = 0.9 --opaque
+creditText.Parent = screenGui
+
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Vaccine manBY Welcome on discord";
+        Text = " Made By Welcome On Discord";
+        Duration = 5;
+        Icon = "rbxassetid://1108382932"; -- image id if you don't wanna add it leave it like that
+})
+
+local ToolName = "Transformation"
+local Animation = 14406991505
+
+local t = Instance.new("Tool")
+t.Name = ToolName
+t.RequiresHandle = false
+t.CanBeDropped = false
+t.Parent = game.Players.LocalPlayer.Backpack
+t.Activated:Connect(function()loadstring(game:HttpGet("https://pastebin.com/raw/FrGmJDSk"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/NS3kWW3B"))()
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+         end
+      end
+task.wait(0.1)
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+    end
+end
+local a = Instance.new("Animation")
+a.AnimationId = "rbxassetid://" .. Animation
+local p = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a)
+p:Play()
+end)
+
+local ToolName = "Teleportation"
+local Animation = 14406991505
+
+local t = Instance.new("Tool")
+t.Name = ToolName
+t.RequiresHandle = false
+t.CanBeDropped = false
+t.Parent = game.Players.LocalPlayer.Backpack
+t.Activated:Connect(function()loadstring(game:HttpGet("https://pastebin.com/raw/FrGmJDSk"))()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.General["General"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(30)
+	end
+end
+
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+         end
+      end
+task.wait(0.1)
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+    end
+end
+local a = Instance.new("Animation")
+a.AnimationId = "rbxassetid://" .. Animation
+local p = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a)
+p:Play()
+end)
+
+local ToolName = "Crushed Smash"
+local Animation = 12463072679
+
+local t = Instance.new("Tool")
+t.Name = ToolName
+t.RequiresHandle = false
+t.CanBeDropped = false
+t.Parent = game.Players.LocalPlayer.Backpack
+t.Activated:Connect(function()local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://3923230963"
+sound.Volume = 1
+sound.Parent = workspace
+sound:Play()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.KJEffects["fine...Emit"].EmitBatch2:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(14)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.InchGo["GoodSmoke3"].R:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(260)
+	end
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.InchGo["GoodSmoke3"].L:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(260)
+	end
+end
+local a = Instance.new("Animation")
+a.AnimationId = "rbxassetid://" .. Animation
+local p = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a)
+p:Play()
+end)
+
+local ToolName = "Skilled Moves"
+local Animation = 17464923657
+
+local t = Instance.new("Tool")
+t.Name = ToolName
+t.RequiresHandle = false
+t.CanBeDropped = false
+t.Parent = game.Players.LocalPlayer.Backpack
+t.Activated:Connect(function()local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://3923230963"
+sound.Volume = 1
+sound.Parent = workspace
+sound:Play()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local EmitBatch2 = ReplicatedStorage.Resources.Fang.General["General"].Attachment:Clone()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+EmitBatch2.Parent = character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(EmitBatch2:GetChildren()) do
+	if child:IsA("ParticleEmitter") then
+		child:Emit(30)
+	end
+end
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Left Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+         end
+      end
+task.wait(0.1)
+local fx7 = game.ReplicatedStorage.Resources.FiveSeasonsFX["CharFX"].ArmFX:Clone()
+fx7.Parent = game.Players.LocalPlayer.Character["Right Arm"]
+for _, child in ipairs(fx7:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+child.Color = ColorSequence.new(Color3.fromRGB(160, 32, 240)) -- Set color to purple
+        child:Emit(2) -- Emit 1 particle
+    end
+end
+local a = Instance.new("Animation")
+a.AnimationId = "rbxassetid://" .. Animation
+local p = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(a)
+p:Play()
+end)
+
+local plr = game.Players.LocalPlayer
+local gui = plr.PlayerGui
+local ulttext = gui.ScreenGui.MagicHealth.TextLabel
+
+ulttext.Text = "DRAGON DEMON"
